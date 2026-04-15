@@ -1,6 +1,5 @@
-
 # ==================================================
-# Zsh history (MUST be at the top)
+# Zsh history
 # ==================================================
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
@@ -12,14 +11,51 @@ setopt HIST_REDUCE_BLANKS
 
 
 # ==================================================
-# User defined
+# PATH
 # ==================================================
-path=("$HOME/.local/bin" $path)
+path=("$HOME/.local/bin" "${path[@]}")
 
-set -a && source ~/.env && set +a
 
+# ==================================================
+# SAFE ENV LOAD (portable)
+# ==================================================
+if [[ -f ~/.env ]]; then
+  while IFS= read -r line; do
+    [[ "$line" == *=* ]] && export "$line"
+  done < ~/.env
+fi
+
+
+# ==================================================
+# COMPLETION SYSTEM (portable fix)
+# ==================================================
+
+# Detect Homebrew zsh (macOS Intel or Apple Silicon)
+if command -v brew >/dev/null 2>&1; then
+  ZSH_PREFIX=$(brew --prefix zsh 2>/dev/null)
+  if [[ -n "$ZSH_PREFIX" && -d "$ZSH_PREFIX/share/zsh/functions" ]]; then
+    fpath=(
+      "$ZSH_PREFIX/share/zsh/functions"
+      "$ZSH_PREFIX/share/zsh/site-functions"
+      "${fpath[@]}"
+    )
+  fi
+fi
+
+# Fallback for Linux / system zsh
+if [[ -d /usr/share/zsh/functions ]]; then
+  fpath=(/usr/share/zsh/functions "${fpath[@]}")
+fi
+
+autoload -Uz compinit
+compinit
+
+
+# ==================================================
+# Aliases
+# ==================================================
 alias ..='cd ..'
-alias ...='cd ..; cd ..'
+alias ...='cd ../..'
 alias ga='git add'
 alias gb='git branch'
 alias gco='git checkout'
@@ -28,72 +64,58 @@ alias gl='git pull'
 alias gp='git push'
 alias gpp='gp -u origin HEAD; gp -f origin HEAD:staging'
 alias gst='git status'
-alias ls='lsd'
-alias l='lsd -l'
-alias ll='lsd -la'
-alias lt='lsd --tree'
+alias ls='lsd 2>/dev/null || ls'
+alias l='ls -l'
+alias ll='ls -la'
+alias lt='ls -R'
 
 
-
-# 3. Yazi Function (Better than the alias)
+# ==================================================
+# Yazi helper
+# ==================================================
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t yazi-cwd.XXXXXX)"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
-eval "$(starship init zsh)"
+
+# ==================================================
+# Prompt
+# ==================================================
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
 
 
-# Keybindings for Ctrl + Left/Right Arrow to move by word
+# ==================================================
+# Keybindings
+# ==================================================
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-
-# Optional: Also fix Ctrl + Delete to delete word
 bindkey "^[[3;5~" kill-word
 
 
 # ==================================================
-# Zinit
+# Zinit (lazy install)
 # ==================================================
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
+ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
+
+if [[ ! -f "$ZINIT_HOME/zinit.zsh" ]]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit "$ZINIT_HOME"
 fi
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-
-### End of Zinit's installer chunk
+source "$ZINIT_HOME/zinit.zsh"
 
 
-eval "$(starship init zsh)"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-### Load Zinit Plugins
-
-# zinit light junegunn/fzf-shell
+# ==================================================
+# Plugins
+# ==================================================
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
-
-# Must be loaded last
 zinit light zsh-users/zsh-syntax-highlighting
-
