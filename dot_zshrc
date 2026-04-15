@@ -67,7 +67,7 @@ alias gst='git status'
 alias ls='lsd 2>/dev/null || ls'
 alias l='ls -l'
 alias ll='ls -la'
-alias lt='ls -R'
+alias lt='lsd --tree'
 
 
 # ==================================================
