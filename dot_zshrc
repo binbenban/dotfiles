@@ -49,11 +49,11 @@ eval "$(starship init zsh)"
 
 
 # Keybindings for Ctrl + Left/Right Arrow to move by word
-# bindkey "^[[1;5C" forward-word
-# bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 # Optional: Also fix Ctrl + Delete to delete word
-# bindkey "^[[3;5~" kill-word
+bindkey "^[[3;5~" kill-word
 
 
 # ==================================================
