@@ -1,7 +1,4 @@
-# ==================================================
-# Zinit (lazy install)
-# ==================================================
-
+# Zinit
 ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
 
 if [[ ! -f "$ZINIT_HOME/zinit.zsh" ]]; then
@@ -11,11 +8,11 @@ fi
 
 source "$ZINIT_HOME/zinit.zsh"
 
-# ==================================================
-# Plugins
-# ==================================================
+# Plugins (optimized)
+zinit light-mode for Aloxaf/fzf-tab
 
 zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light Aloxaf/fzf-tab
+
+zinit light marlonrichert/zsh-autocomplete
+
 zinit light zsh-users/zsh-syntax-highlighting
