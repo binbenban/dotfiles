@@ -1,121 +1,15 @@
-# ==================================================
-# Zsh history
-# ==================================================
-HISTFILE=$HOME/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
-setopt INC_APPEND_HISTORY SHARE_HISTORY
-setopt HIST_IGNORE_ALL_DUPS EXTENDED_HISTORY
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_REDUCE_BLANKS
+ZSH_CONFIG_DIR="$HOME/.zsh"
 
-
-# ==================================================
-# PATH
-# ==================================================
-path=("$HOME/.local/bin" "${path[@]}")
-
-
-# ==================================================
-# SAFE ENV LOAD (portable)
-# ==================================================
-if [[ -f ~/.env ]]; then
-  while IFS= read -r line; do
-    [[ "$line" == *=* ]] && export "$line"
-  done < ~/.env
-fi
-
-
-# ==================================================
-# COMPLETION SYSTEM (portable fix)
-# ==================================================
-
-# Detect Homebrew zsh (macOS Intel or Apple Silicon)
-if command -v brew >/dev/null 2>&1; then
-  ZSH_PREFIX=$(brew --prefix zsh 2>/dev/null)
-  if [[ -n "$ZSH_PREFIX" && -d "$ZSH_PREFIX/share/zsh/functions" ]]; then
-    fpath=(
-      "$ZSH_PREFIX/share/zsh/functions"
-      "$ZSH_PREFIX/share/zsh/site-functions"
-      "${fpath[@]}"
-    )
-  fi
-fi
-
-# Fallback for Linux / system zsh
-if [[ -d /usr/share/zsh/functions ]]; then
-  fpath=(/usr/share/zsh/functions "${fpath[@]}")
-fi
-
-autoload -Uz compinit
-compinit
-
-
-# ==================================================
-# Aliases
-# ==================================================
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ga='git add'
-alias gb='git branch'
-alias gco='git checkout'
-alias gcam='git commit -a -m'
-alias gl='git pull'
-alias gp='git push'
-alias gpp='gp -u origin HEAD; gp -f origin HEAD:staging'
-alias gst='git status'
-alias ls="lsd --group-dirs first"  
-alias ll="lsd --group-dirs first -la"  
-alias l='lsd -l'  
-alias tree="lsd --tree --group-dirs first --depth=2 2>/dev/null"  
-
-# ==================================================
-# Yazi helper
-# ==================================================
-function y() {
-  local tmp="$(mktemp -t yazi-cwd.XXXXXX)"
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(cat -- "$tmp")" && [[ -n "$cwd" && "$cwd" != "$PWD" ]]; then
-    builtin cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}
-
-
-# ==================================================
-# Prompt
-# ==================================================
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init zsh)"
-fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# ==================================================
-# Keybindings
-# ==================================================
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-bindkey "^[[3;5~" kill-word
-
-
-# ==================================================
-# Zinit (lazy install)
-# ==================================================
-ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
-
-if [[ ! -f "$ZINIT_HOME/zinit.zsh" ]]; then
-  mkdir -p "$(dirname $ZINIT_HOME)"
-  git clone https://github.com/zdharma-continuum/zinit "$ZINIT_HOME"
-fi
-
-source "$ZINIT_HOME/zinit.zsh"
-
-
-# ==================================================
-# Plugins
-# ==================================================
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light Aloxaf/fzf-tab
-zinit light zsh-users/zsh-syntax-highlighting
+for file in \
+  history.zsh \
+  path.zsh \
+  env.zsh \
+  completion.zsh \
+  aliases.zsh \
+  functions.zsh \
+  keybindings.zsh \
+  prompt.zsh \
+  plugins.zsh
+do
+  [[ -f "$ZSH_CONFIG_DIR/$file" ]] && source "$ZSH_CONFIG_DIR/$file"
+done
