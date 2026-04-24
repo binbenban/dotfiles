@@ -1,0 +1,39 @@
+tap "anomalyco/tap"
+tap "tw93/tap"
+
+# ──────────────────────────────────────────────
+# Shared (all platforms)
+# ──────────────────────────────────────────────
+brew "fzf"
+brew "jq"
+brew "lsd"
+brew "neovim"
+brew "starship"
+brew "uv"
+brew "yazi"
+brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
+# ──────────────────────────────────────────────
+# macOS only
+# ──────────────────────────────────────────────
+if OS == "Darwin"
+  brew "mole"
+  brew "python@3.14"
+  brew "pipx"
+  brew "portaudio"
+  brew "anomalyco/tap/opencode"
+
+  cask "emacs-app"
+  cask "iina"
+  cask "tw93/tap/kakuku"
+  cask "maccy"
+end
+
+# ──────────────────────────────────────────────
+# Linux only
+# ──────────────────────────────────────────────
+if OS == "Linux"
+  # Add Linux-only packages here
+end
