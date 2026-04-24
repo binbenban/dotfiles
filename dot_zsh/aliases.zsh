@@ -15,6 +15,10 @@ alias gp='git push'
 alias gpp='gp -u origin HEAD; gp -f origin HEAD:staging'
 alias gst='git status'
 
+# brew bundle
+alias brew-sync='brew bundle install --file="$HOME/.config/brewfile/Brewfile"'
+alias brew-dump='brew bundle dump --file="$HOME/.config/brewfile/Brewfile" --force'
+
 # lsd
 alias ls="lsd --group-dirs first"
 alias ll="lsd --group-dirs first -la"
