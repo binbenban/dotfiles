@@ -1,6 +1,9 @@
 -- Set leader key to Space (like VS Code Command Palette)
 vim.g.mapleader = " "
 
+-- Use system clipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- Add newline at end of file
 vim.opt.fixeol = true
 
