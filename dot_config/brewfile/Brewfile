@@ -11,9 +11,6 @@ brew "neovim"
 brew "starship"
 brew "uv"
 brew "yazi"
-brew "zsh"
-brew "zsh-autosuggestions"
-brew "zsh-syntax-highlighting"
 
 # ──────────────────────────────────────────────
 # macOS only
