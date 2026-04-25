@@ -1,0 +1,4 @@
+# Keep it minimal — just delegate
+[ -f ~/.profile ] && . ~/.profile
+[ -f ~/.bashrc ] && . ~/.bashrc
+
