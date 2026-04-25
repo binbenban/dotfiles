@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "pyright", "ruff" },
+        ensure_installed = { "pyright" },
       })
     end,
   },
@@ -27,16 +27,16 @@ return {
           }
         }
       })
-      
+
       vim.lsp.config('ruff', {
-        cmd = { "/home/bwang/.local/share/nvim/mason/packages/ruff/venv/bin/ruff", "server" },
+        cmd = { "ruff", "server" },
         filetypes = { "python" },
         root_markers = { "pyproject.toml", "ruff.toml", ".git" },
         on_attach = function(client, bufnr)
           client.server_capabilities.hoverProvider = false
         end,
       })
-      
+
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "python",
         callback = function()
@@ -44,7 +44,7 @@ return {
           vim.lsp.enable("ruff")
         end,
       })
-      
+
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to Definition" })
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Show Documentation" })
       vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = "Rename Variable" })
