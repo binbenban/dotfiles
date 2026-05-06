@@ -1,5 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+
+format = "$hostname$directory$git_branch$python$character"
+
+
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
@@ -278,3 +282,10 @@ format = '\[[$symbol($version)]($style)\]'
 
 [zig]
 format = '\[[$symbol($version)]($style)\]'
+
+[directory]
+format = '\[[$path]($style)\] '
+style = "cyan"
+truncate_to_repo = false
+
+
