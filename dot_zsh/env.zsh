@@ -7,3 +7,5 @@ if [[ -f ~/.env ]]; then
     [[ "$line" == *=* ]] && export "$line"
   done < ~/.env
 fi
+
+export EDITOR=vim
