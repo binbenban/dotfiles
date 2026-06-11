@@ -4,6 +4,7 @@
 
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # git
 alias ga='git add'
