@@ -1,3 +1,5 @@
+theme = "catppuccin_mocha"
+
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 C-y = [
@@ -9,3 +11,6 @@ C-y = [
 	':set mouse false',
   ':set mouse true',
 ]
+
+[editor]
+true-color = true
