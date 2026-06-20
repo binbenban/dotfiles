@@ -8,11 +8,7 @@ fi
 
 source "$ZINIT_HOME/zinit.zsh"
 
-# Plugins (optimized)
-zinit light-mode for Aloxaf/fzf-tab
-
+# Plugins
 zinit light zsh-users/zsh-autosuggestions
-
-zinit light marlonrichert/zsh-autocomplete
-
+zinit light-mode for Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
