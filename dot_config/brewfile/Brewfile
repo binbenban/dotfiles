@@ -1,6 +1,3 @@
-brew trust "anomalyco/tap"
-brew trust "tw93/tap"
-
 tap "anomalyco/tap"
 tap "tw93/tap"
 
@@ -12,7 +9,7 @@ brew "fzf"
 brew "helix"
 brew "jq"
 brew "lsd"
-rew "ruff"
+brew "ruff"
 brew "starship"
 brew "uv"
 brew "yazi"
