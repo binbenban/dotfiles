@@ -6,6 +6,7 @@ tap "tw93/tap"
 # ──────────────────────────────────────────────
 brew "bat"
 brew "fzf"
+brew "gh"
 brew "helix"
 brew "jq"
 brew "lazygit"
