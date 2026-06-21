@@ -1,3 +1,6 @@
+brew trust "anomalyco/tap"
+brew trust "tw93/tap"
+
 tap "anomalyco/tap"
 tap "tw93/tap"
 
