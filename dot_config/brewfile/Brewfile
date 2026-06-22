@@ -7,7 +7,7 @@ tap "tw93/tap"
 brew "bat"
 brew "fzf"
 brew "gh"
-brew "gitdelta"
+brew "git-delta"
 brew "helix"
 brew "jq"
 brew "lazygit"
@@ -16,6 +16,7 @@ brew "ruff"
 brew "starship"
 brew "uv"
 brew "yazi"
+brew "zellij"
 
 # ──────────────────────────────────────────────
 # macOS only
