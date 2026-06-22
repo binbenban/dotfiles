@@ -1,8 +1,8 @@
 theme = "catppuccin_mocha"
 
 [keys.normal]
-C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
-C-y = [
+A-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+A-y = [
 	':sh rm -f /tmp/unique-ca1ea106',
 	':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-ca1ea106',
 	':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
@@ -14,3 +14,8 @@ C-y = [
 
 [editor]
 true-color = true
+bufferline = "always"
+
+[editor.file-picker]
+hidden = false
+git-ignore = false
