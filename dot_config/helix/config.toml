@@ -15,6 +15,7 @@ A-y = [
 [editor]
 true-color = true
 bufferline = "always"
+mouse = true
 
 [editor.file-picker]
 hidden = false
