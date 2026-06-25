@@ -1,0 +1,14 @@
+
+[[language]]
+name = "python"
+auto-format = true
+
+[[language]]
+name = "markdown"
+soft-wrap.enable = true
+soft-wrap.wrap-at-text-width = true # Wraps at 80 chars by default   
+
+[language.formatter]
+command = "ruff"
+args = ["format", "-"]
+
