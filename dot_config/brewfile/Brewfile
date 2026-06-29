@@ -17,6 +17,7 @@ brew "starship"
 brew "uv"
 brew "yazi"
 brew "zellij"
+brew "zoxide"
 
 # ──────────────────────────────────────────────
 # macOS only
