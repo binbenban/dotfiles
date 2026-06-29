@@ -10,7 +10,8 @@ for file in \
   keybindings.zsh \
   prompt.zsh \
   plugins.zsh \
-  homebrew.zsh
+  homebrew.zsh \
+  zoxide.zsh
 do
   [[ -f "$ZSH_CONFIG_DIR/$file" ]] && source "$ZSH_CONFIG_DIR/$file"
 done
