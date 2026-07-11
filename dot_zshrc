@@ -4,10 +4,10 @@ for file in \
   history.zsh \
   path.zsh \
   env.zsh \
-  completion.zsh \
+  keybindings.zsh \
   aliases.zsh \
   functions.zsh \
-  keybindings.zsh \
+  completions.zsh \
   prompt.zsh \
   plugins.zsh \
   homebrew.zsh \
