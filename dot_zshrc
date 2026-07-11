@@ -10,7 +10,6 @@ for file in \
   completions.zsh \
   prompt.zsh \
   plugins.zsh \
-  homebrew.zsh \
   zoxide.zsh
 do
   [[ -f "$ZSH_CONFIG_DIR/$file" ]] && source "$ZSH_CONFIG_DIR/$file"
