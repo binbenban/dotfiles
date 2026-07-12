@@ -4,10 +4,8 @@ tap "tw93/tap"
 # ──────────────────────────────────────────────
 # Shared (all platforms)
 # ──────────────────────────────────────────────
-brew "bat"
 brew "fzf"
 brew "gh"
-brew "git-delta"
 brew "helix"
 brew "jq"
 brew "lsd"
@@ -15,7 +13,6 @@ brew "ruff"
 brew "starship"
 brew "uv"
 brew "yazi"
-brew "zellij"
 brew "zoxide"
 
 # ──────────────────────────────────────────────
