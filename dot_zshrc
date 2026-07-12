@@ -7,7 +7,7 @@ for file in \
   keybindings.zsh \
   aliases.zsh \
   functions.zsh \
-  completions.zsh \
+  completion.zsh \
   prompt.zsh \
   plugins.zsh \
   zoxide.zsh
