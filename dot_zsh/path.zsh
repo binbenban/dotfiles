@@ -6,7 +6,7 @@ typeset -U path
 
 path=(
   "$HOME/.local/bin"
-  "/opt/nvim-linux-x86_64/bin"
+  "/opt/homebrew/bin/brew"
   "/home/wanbin@FFMA/.pixi/bin"
   $path
 )
