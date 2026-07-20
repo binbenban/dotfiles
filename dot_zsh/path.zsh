@@ -6,7 +6,6 @@ typeset -U path
 
 path=(
   "$HOME/.local/bin"
-  "/home/wanbin@FFMA/.pixi/bin"
   $path
 )
 
