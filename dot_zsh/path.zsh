@@ -6,6 +6,8 @@ typeset -U path
 
 path=(
   "$HOME/.local/bin"
+  "$HOME/.pixi/bin"
+  "$HOME/.npm-global/bin"
   $path
 )
 
