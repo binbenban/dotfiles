@@ -1,15 +1,16 @@
 ZSH_CONFIG_DIR="$HOME/.zsh"
 
 for file in \
-  history.zsh \
-  path.zsh \
-  env.zsh \
-  keybindings.zsh \
   aliases.zsh \
-  functions.zsh \
+  atuin.zsh \
   completion.zsh \
-  prompt.zsh \
+  env.zsh \
+  functions.zsh \
+  history.zsh \
+  keybindings.zsh \
+  path.zsh \
   plugins.zsh \
+  starship.zsh \
   zoxide.zsh
 do
   [[ -f "$ZSH_CONFIG_DIR/$file" ]] && source "$ZSH_CONFIG_DIR/$file"
