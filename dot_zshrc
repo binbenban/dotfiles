@@ -5,7 +5,6 @@ for file in \
   completion.zsh \
   env.zsh \
   functions.zsh \
-  history.zsh \
   fzf.zsh \
   path.zsh \
   plugins.zsh \
