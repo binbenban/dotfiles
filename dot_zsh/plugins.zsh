@@ -9,5 +9,6 @@ fi
 source "$ZINIT_HOME/zinit.zsh"
 
 # Plugins
+zinit light zsh-users/zsh-autosuggestions
 zinit light-mode for Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
