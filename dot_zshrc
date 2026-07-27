@@ -2,16 +2,16 @@ ZSH_CONFIG_DIR="$HOME/.zsh"
 
 for file in \
   aliases.zsh \
-  atuin.zsh \
   completion.zsh \
   env.zsh \
   functions.zsh \
   history.zsh \
-  keybindings.zsh \
+  fzf.zsh \
   path.zsh \
   plugins.zsh \
   starship.zsh \
-  zoxide.zsh
+  zoxide.zsh \
+  atuin.zsh  # atuin loaded after fzf so ctrl R controlled by atuin
 do
   [[ -f "$ZSH_CONFIG_DIR/$file" ]] && source "$ZSH_CONFIG_DIR/$file"
 done
