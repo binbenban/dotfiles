@@ -5,12 +5,28 @@ for file in \
   completion.zsh \
   env.zsh \
   functions.zsh \
-  fzf.zsh \
   path.zsh \
-  plugins.zsh \
-  starship.zsh \
-  zoxide.zsh \
-  atuin.zsh  # atuin loaded after fzf so ctrl R controlled by atuin
+  plugins.zsh
 do
   [[ -f "$ZSH_CONFIG_DIR/$file" ]] && source "$ZSH_CONFIG_DIR/$file"
 done
+
+bindkey -e
+
+# fzf keybindings (Ctrl+R history, Ctrl+T file, Alt+C cd)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# starship
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
+
+# zoxide
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+# atuin loaded after fzf so ctrl R controlled by atuin
+if command -v atuin >/dev/null 2>&1; then
+  eval "$(atuin init zsh)"
+fi
