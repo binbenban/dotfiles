@@ -29,8 +29,11 @@ if OS == "Darwin"
   brew "anomalyco/tap/opencode"
 
   cask "iina"
-  cask "tw93/tap/kakuku"
   cask "maccy"
+  cask "opensuperwhisper"
+  cask "font-fira-mono-nerd-font"
+  cask "ghostty"
+  cash "snipaste"
 end
 
 # ──────────────────────────────────────────────
