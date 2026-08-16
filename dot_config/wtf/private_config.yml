@@ -1,0 +1,57 @@
+wtf:
+  grid:
+    columns: [60, 60]
+    rows: [4, 4, 8]
+  refreshInterval: 1
+  mods:
+    host:
+      type: cmdrunner
+      title: Host
+      cmd: /usr/bin/uptime
+      args: []
+      enabled: true
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 30s
+
+    storage:
+      type: cmdrunner
+      title: Storage
+      cmd: /bin/df
+      args: ["-h", "/", "/mnt/das"]
+      enabled: true
+      position:
+        top: 1
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 60s
+
+    immich:
+      type: cmdrunner
+      title: Immich (Docker)
+      cmd: /home/binbenban/.local/bin/immich-status
+      args: []
+      enabled: true
+      position:
+        top: 2
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 10s
+
+    paseo:
+      type: cmdrunner
+      title: Paseo
+      cmd: /home/binbenban/.local/bin/paseo-status
+      args: []
+      enabled: true
+      position:
+        top: 2
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 10s
