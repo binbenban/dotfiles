@@ -40,5 +40,6 @@ end
 # Linux only
 # ──────────────────────────────────────────────
 if OS == "Linux"
-  # Add Linux-only packages here
+  brew "transmission-cli"
+  brew "wtfutil"
 end
