@@ -21,7 +21,7 @@ brew "herdr"
 # ──────────────────────────────────────────────
 # macOS only
 # ──────────────────────────────────────────────
-if OS == "Darwin"
+if OS.mac?
   brew "mole"
   brew "python@3.14"
   brew "pipx"
@@ -39,7 +39,7 @@ end
 # ──────────────────────────────────────────────
 # Linux only
 # ──────────────────────────────────────────────
-if OS == "Linux"
+if OS.linux?
   brew "transmission-cli"
   brew "wtfutil"
 end
