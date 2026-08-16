@@ -1,7 +1,7 @@
 wtf:
   grid:
     columns: [60, 60]
-    rows: [4, 4, 8]
+    rows: [4, 4, 4, 8]
   refreshInterval: 1
   mods:
     host:
@@ -30,6 +30,32 @@ wtf:
         width: 2
       refreshInterval: 60s
 
+    transmission:
+      type: cmdrunner
+      title: Transmission
+      cmd: /home/linuxbrew/.linuxbrew/bin/transmission-remote
+      args: ["--list"]
+      enabled: true
+      position:
+        top: 2
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 15s
+
+    tailscale:
+      type: cmdrunner
+      title: Tailscale
+      cmd: /home/binbenban/.local/bin/tailscale-status
+      args: []
+      enabled: true
+      position:
+        top: 2
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 15s
+
     immich:
       type: cmdrunner
       title: Immich (Docker)
@@ -37,7 +63,7 @@ wtf:
       args: []
       enabled: true
       position:
-        top: 2
+        top: 3
         left: 0
         height: 1
         width: 1
@@ -50,7 +76,7 @@ wtf:
       args: []
       enabled: true
       position:
-        top: 2
+        top: 3
         left: 1
         height: 1
         width: 1
