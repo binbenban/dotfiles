@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -u
+
+service=$(systemctl list-units --all --no-legend 'paseo*' 2>/dev/null | head -n 1 || true)
+container=$(sudo -n docker ps -a --format '{{.Names}}|{{.Status}}' 2>/dev/null | grep -i paseo | head -n 1 || true)
+processes=$(pgrep -af -i 'paseo (Supervisor|Daemon)' 2>/dev/null || true)
+
+if [[ -n "$service" ]]; then
+  printf 'systemd: %s\n' "$service"
+elif [[ -n "$container" ]]; then
+  printf 'Docker: %s\n' "$container"
+elif [[ -n "$processes" ]]; then
+  printf 'Running:\n%s\n' "$processes"
+else
+  printf 'Not running: no Paseo service, container, or process found.\n'
+fi

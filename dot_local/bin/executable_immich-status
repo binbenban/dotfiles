@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -u
+
+for container in immich_server immich_postgres immich_redis immich_machine_learning; do
+  status=$(sudo -n docker inspect --format '{{.State.Status}}{{if .State.Health}} (health: {{.State.Health.Status}}){{end}}' "$container" 2>/dev/null || printf 'NOT FOUND')
+  printf '%-25s %s\n' "$container" "$status"
+done

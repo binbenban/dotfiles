@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -o pipefail
+
+/usr/bin/tailscale status --json 2>/dev/null | /home/linuxbrew/.linuxbrew/bin/jq -r '
+  if .BackendState != "Running" then
+    "State: " + (.BackendState // "unavailable")
+  else
+    "State: connected\nName: " + .Self.HostName + "\nIP: " + .Self.TailscaleIPs[0]
+  end
+' || printf 'State: unavailable\n'
