@@ -25,15 +25,14 @@ if OS.mac?
   brew "mole"
   brew "python@3.14"
   brew "pipx"
-  brew "portaudio"
+  cask "font-fira-mono-nerd-font"
   brew "anomalyco/tap/opencode"
-
   cask "iina"
   cask "maccy"
-  cask "opensuperwhisper"
-  cask "font-fira-mono-nerd-font"
   cask "ghostty"
   cask "snipaste"
+  cask "visual-studio-code"
+  cask "tailscale-app"
 end
 
 # ──────────────────────────────────────────────
