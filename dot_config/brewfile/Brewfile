@@ -33,7 +33,7 @@ if OS.mac?
   cask "opensuperwhisper"
   cask "font-fira-mono-nerd-font"
   cask "ghostty"
-  cash "snipaste"
+  cask "snipaste"
 end
 
 # ──────────────────────────────────────────────
