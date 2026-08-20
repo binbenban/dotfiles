@@ -1,5 +1,6 @@
 tap "anomalyco/tap"
 tap "tw93/tap"
+tap "my-monkeys/tap"
 
 # ──────────────────────────────────────────────
 # Shared (all platforms)
@@ -33,6 +34,8 @@ if OS.mac?
   cask "snipaste"
   cask "visual-studio-code"
   cask "tailscale-app"
+  cask "opensuperwhisper"
+  cask "vivaldi"
 end
 
 # ──────────────────────────────────────────────
