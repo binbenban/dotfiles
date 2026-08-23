@@ -30,3 +30,6 @@ fi
 if command -v atuin >/dev/null 2>&1; then
   eval "$(atuin init zsh)"
 fi
+
+# any local stuff
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
