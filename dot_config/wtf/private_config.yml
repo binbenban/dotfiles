@@ -32,7 +32,7 @@ wtf:
 
     transmission:
       type: cmdrunner
-      title: Transmission
+      title: Transmission :9091
       cmd: /home/linuxbrew/.linuxbrew/bin/transmission-remote
       args: ["--list"]
       enabled: true
@@ -58,7 +58,7 @@ wtf:
 
     immich:
       type: cmdrunner
-      title: Immich (Docker)
+      title: Immich (Docker) :2283
       cmd: /home/binbenban/.local/bin/immich-status
       args: []
       enabled: true
@@ -71,7 +71,7 @@ wtf:
 
     paseo:
       type: cmdrunner
-      title: Paseo
+      title: Paseo :6767
       cmd: /home/binbenban/.local/bin/paseo-status
       args: []
       enabled: true
@@ -84,7 +84,7 @@ wtf:
 
     matter:
       type: cmdrunner
-      title: Matter Server (Docker)
+      title: Matter Server (Docker) :5580
       cmd: /home/binbenban/.local/bin/matter-server-status
       args: []
       enabled: true
@@ -97,7 +97,7 @@ wtf:
 
     homeassistant:
       type: cmdrunner
-      title: Home Assistant (Docker)
+      title: Home Assistant (Docker) :8123
       cmd: /home/binbenban/.local/bin/homeassistant-status
       args: []
       enabled: true
