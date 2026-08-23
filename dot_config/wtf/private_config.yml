@@ -1,7 +1,7 @@
 wtf:
   grid:
     columns: [60, 60]
-    rows: [4, 4, 4, 8]
+    rows: [4, 4, 4, 8, 4]
   refreshInterval: 1
   mods:
     host:
@@ -77,6 +77,32 @@ wtf:
       enabled: true
       position:
         top: 3
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 10s
+
+    matter:
+      type: cmdrunner
+      title: Matter Server (Docker)
+      cmd: /home/binbenban/.local/bin/matter-server-status
+      args: []
+      enabled: true
+      position:
+        top: 4
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 10s
+
+    homeassistant:
+      type: cmdrunner
+      title: Home Assistant (Docker)
+      cmd: /home/binbenban/.local/bin/homeassistant-status
+      args: []
+      enabled: true
+      position:
+        top: 4
         left: 1
         height: 1
         width: 1
