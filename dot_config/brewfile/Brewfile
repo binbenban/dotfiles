@@ -27,7 +27,6 @@ if OS.mac?
   brew "python@3.14"
   brew "pipx"
   cask "font-fira-mono-nerd-font"
-  brew "anomalyco/tap/opencode"
   cask "iina"
   cask "maccy"
   cask "ghostty"
