@@ -1,7 +1,7 @@
 wtf:
   grid:
     columns: [60, 60]
-    rows: [4, 4, 4, 8, 4]
+    rows: [4, 4, 4, 8, 4, 4]
   refreshInterval: 1
   mods:
     host:
@@ -106,4 +106,17 @@ wtf:
         left: 1
         height: 1
         width: 1
+      refreshInterval: 10s
+
+    unifi:
+      type: cmdrunner
+      title: UniFi Network (Docker) :8443
+      cmd: /home/binbenban/.local/bin/unifi-status
+      args: []
+      enabled: true
+      position:
+        top: 5
+        left: 0
+        height: 1
+        width: 2
       refreshInterval: 10s
