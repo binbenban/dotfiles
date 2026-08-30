@@ -110,7 +110,7 @@ wtf:
 
     unifi:
       type: cmdrunner
-      title: UniFi Network (Docker) :8443
+      title: UniFi OS Server :11443
       cmd: /home/binbenban/.local/bin/unifi-status
       args: []
       enabled: true
