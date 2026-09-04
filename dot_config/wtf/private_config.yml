@@ -1,7 +1,7 @@
 wtf:
   grid:
     columns: [60, 60]
-    rows: [4, 4, 4, 8, 4, 4]
+    rows: [4, 4, 4, 8, 4, 4, 4]
   refreshInterval: 1
   mods:
     host:
@@ -82,19 +82,6 @@ wtf:
         width: 1
       refreshInterval: 10s
 
-    matter:
-      type: cmdrunner
-      title: Matter Server (Docker) :5580
-      cmd: /home/binbenban/.local/bin/matter-server-status
-      args: []
-      enabled: true
-      position:
-        top: 4
-        left: 0
-        height: 1
-        width: 1
-      refreshInterval: 10s
-
     homeassistant:
       type: cmdrunner
       title: Home Assistant (Docker) :8123
@@ -103,7 +90,33 @@ wtf:
       enabled: true
       position:
         top: 4
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 10s
+
+    mqtt:
+      type: cmdrunner
+      title: MQTT / Mosquitto (Docker) :1883
+      cmd: /home/binbenban/.local/bin/mosquitto-status
+      args: []
+      enabled: true
+      position:
+        top: 5
         left: 1
+        height: 1
+        width: 1
+      refreshInterval: 10s
+
+    matter:
+      type: cmdrunner
+      title: Matter Server (Docker) :5580
+      cmd: /home/binbenban/.local/bin/matter-server-status
+      args: []
+      enabled: true
+      position:
+        top: 5
+        left: 0
         height: 1
         width: 1
       refreshInterval: 10s
@@ -115,7 +128,7 @@ wtf:
       args: []
       enabled: true
       position:
-        top: 5
+        top: 6
         left: 0
         height: 1
         width: 2
