@@ -25,3 +25,5 @@ alias ls="lsd --group-dirs first"
 alias ll="lsd --group-dirs first -la"
 alias l='lsd -l'
 alias tree="lsd --tree --group-dirs first --depth=2 2>/dev/null"
+
+alias wtf="wtfutil"

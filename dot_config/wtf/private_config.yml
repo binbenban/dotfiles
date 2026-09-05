@@ -1,7 +1,7 @@
 wtf:
   grid:
     columns: [60, 60]
-    rows: [4, 4, 4, 8]
+    rows: [4, 4, 4, 8, 4, 4, 4]
   refreshInterval: 1
   mods:
     host:
@@ -32,7 +32,7 @@ wtf:
 
     transmission:
       type: cmdrunner
-      title: Transmission
+      title: Transmission :9091
       cmd: /home/linuxbrew/.linuxbrew/bin/transmission-remote
       args: ["--list"]
       enabled: true
@@ -58,7 +58,7 @@ wtf:
 
     immich:
       type: cmdrunner
-      title: Immich (Docker)
+      title: Immich (Docker) :2283
       cmd: /home/binbenban/.local/bin/immich-status
       args: []
       enabled: true
@@ -71,7 +71,7 @@ wtf:
 
     paseo:
       type: cmdrunner
-      title: Paseo
+      title: Paseo :6767
       cmd: /home/binbenban/.local/bin/paseo-status
       args: []
       enabled: true
@@ -80,4 +80,56 @@ wtf:
         left: 1
         height: 1
         width: 1
+      refreshInterval: 10s
+
+    homeassistant:
+      type: cmdrunner
+      title: Home Assistant (Docker) :8123
+      cmd: /home/binbenban/.local/bin/homeassistant-status
+      args: []
+      enabled: true
+      position:
+        top: 4
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 10s
+
+    mqtt:
+      type: cmdrunner
+      title: MQTT / Mosquitto (Docker) :1883
+      cmd: /home/binbenban/.local/bin/mosquitto-status
+      args: []
+      enabled: true
+      position:
+        top: 5
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 10s
+
+    matter:
+      type: cmdrunner
+      title: Matter Server (Docker) :5580
+      cmd: /home/binbenban/.local/bin/matter-server-status
+      args: []
+      enabled: true
+      position:
+        top: 5
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 10s
+
+    unifi:
+      type: cmdrunner
+      title: UniFi OS Server :11443
+      cmd: /home/binbenban/.local/bin/unifi-status
+      args: []
+      enabled: true
+      position:
+        top: 6
+        left: 0
+        height: 1
+        width: 2
       refreshInterval: 10s

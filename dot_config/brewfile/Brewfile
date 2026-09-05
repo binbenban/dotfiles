@@ -1,5 +1,6 @@
 tap "anomalyco/tap"
 tap "tw93/tap"
+tap "my-monkeys/tap"
 
 # ──────────────────────────────────────────────
 # Shared (all platforms)
@@ -25,15 +26,15 @@ if OS.mac?
   brew "mole"
   brew "python@3.14"
   brew "pipx"
-  brew "portaudio"
-  brew "anomalyco/tap/opencode"
-
+  cask "font-fira-mono-nerd-font"
   cask "iina"
   cask "maccy"
-  cask "opensuperwhisper"
-  cask "font-fira-mono-nerd-font"
   cask "ghostty"
-  cash "snipaste"
+  cask "snipaste"
+  cask "visual-studio-code"
+  cask "tailscale-app"
+  cask "opensuperwhisper"
+  cask "vivaldi"
 end
 
 # ──────────────────────────────────────────────
