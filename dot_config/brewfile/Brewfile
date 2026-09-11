@@ -33,7 +33,6 @@ if OS.mac?
   cask "snipaste"
   cask "visual-studio-code"
   cask "tailscale-app"
-  cask "opensuperwhisper"
   cask "vivaldi"
 end
 
