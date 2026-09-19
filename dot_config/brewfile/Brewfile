@@ -8,7 +8,6 @@ tap "my-monkeys/tap"
 brew "atuin"
 brew "fzf"
 brew "gh"
-brew "helix"
 brew "jq"
 brew "lsd"
 brew "ruff"
@@ -27,7 +26,7 @@ brew "fd"
 # macOS only
 # ──────────────────────────────────────────────
 if OS.mac?
-  brew "betterdisplay"
+  cask "betterdisplay"
   brew "mole"
   brew "python@3.14"
   brew "pipx"
