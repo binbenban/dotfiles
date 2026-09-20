@@ -17,8 +17,8 @@ alias gpp='gp -u origin HEAD; gp -f origin HEAD:staging'
 alias gst='git status'
 
 # brew bundle
-alias brew-sync='arch -arm64 brew bundle install --file="$HOME/.config/brewfile/Brewfile"'
-alias brew-dump='arch -arm64 brew bundle dump --file="$HOME/.config/brewfile/Brewfile" --force'
+alias brew-sync='brew bundle install --file="$HOME/.config/brewfile/Brewfile"'
+alias brew-dump='brew bundle dump --file="$HOME/.config/brewfile/Brewfile" --force'
 
 # lsd
 alias ls="lsd --group-dirs first"
