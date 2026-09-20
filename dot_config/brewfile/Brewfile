@@ -44,7 +44,7 @@ end
 # Linux only
 # ──────────────────────────────────────────────
 if OS.linux?
-  brew "opencode"
+  brew "pi-coding-agent"
   brew "transmission-cli"
   brew "wtfutil"
 end
