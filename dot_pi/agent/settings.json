@@ -1,0 +1,18 @@
+{
+  "lastChangelogVersion": "0.85.1",
+  "theme": "dark",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-terra",
+  "skills": [
+    "~/.agents/skills",
+    "~/projects/obsidian_vault/skills"
+  ],
+  "enableSkillCommands": true,
+  "packages": [
+    "npm:pi-brave-search",
+    "npm:pi-docparser",
+    "../../.npm-global/lib/node_modules/@jmfederico/pi-web/dist/pi-packages/relays",
+    "npm:pi-web-access"
+  ],
+  "defaultThinkingLevel": "medium"
+}
