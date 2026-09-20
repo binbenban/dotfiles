@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -u
+
+container=matter-server
+status=$(sudo -n docker inspect --format '{{.State.Status}}{{if .State.Health}} (health: {{.State.Health.Status}}){{end}}' "$container" 2>/dev/null || printf 'NOT FOUND')
+printf '%-25s %s\n' "$container" "$status"

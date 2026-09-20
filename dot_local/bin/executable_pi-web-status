@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -u
+
+sessiond=$(systemctl --user is-active pi-web-sessiond.service 2>&1 || true)
+web=$(systemctl --user is-active pi-web.service 2>&1 || true)
+http=$(/usr/bin/curl --silent --output /dev/null --write-out '%{http_code}' --max-time 3 http://127.0.0.1:8504 || true)
+
+printf 'Session daemon: %s\nWeb server: %s\nHTTP: %s\nURL: http://127.0.0.1:8504\n' "$sessiond" "$web" "${http:-unreachable}"

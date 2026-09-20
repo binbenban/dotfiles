@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -u
+
+for service in uosserver uosserver-updater; do
+  status=$(systemctl is-active "$service.service" 2>/dev/null || printf 'unknown')
+  printf '%-27s %s\n' "$service" "$status"
+done
+
+status=$(curl -ksS --max-time 3 -o /dev/null -w '%{http_code} (%{time_total}s)' https://127.0.0.1:11443/ 2>/dev/null || printf 'UNREACHABLE')
+printf '%-27s %s\n' 'Web UI :11443' "$status"

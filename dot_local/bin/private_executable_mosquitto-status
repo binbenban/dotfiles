@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -u
+
+status=$(sudo -n docker inspect --format '{{.State.Status}}{{if .State.Health}} (health: {{.State.Health.Status}}){{end}}' mosquitto 2>/dev/null || printf 'NOT FOUND')
+printf '%-25s %s\n' mosquitto "$status"
