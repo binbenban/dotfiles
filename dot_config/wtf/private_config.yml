@@ -121,10 +121,10 @@ wtf:
         width: 2
       refreshInterval: 10s
 
-    opencode:
+    piwebui:
       type: cmdrunner
-      title: OpenCode Web :4096
-      cmd: /home/binbenban/.local/bin/opencode-status
+      title: Pi Web UI :8787
+      cmd: /home/binbenban/.local/bin/pi-web-ui-status
       args: []
       enabled: true
       position:
