@@ -1,7 +1,7 @@
 wtf:
   grid:
     columns: [60, 60]
-    rows: [4, 4, 4, 8, 4, 4, 4]
+    rows: [4, 4, 4, 8, 4, 4, 4, 4]
   refreshInterval: 1
   mods:
     host:
@@ -66,20 +66,7 @@ wtf:
         top: 3
         left: 0
         height: 1
-        width: 1
-      refreshInterval: 10s
-
-    paseo:
-      type: cmdrunner
-      title: Paseo :6767
-      cmd: /home/binbenban/.local/bin/paseo-status
-      args: []
-      enabled: true
-      position:
-        top: 3
-        left: 1
-        height: 1
-        width: 1
+        width: 2
       refreshInterval: 10s
 
     homeassistant:
@@ -129,6 +116,19 @@ wtf:
       enabled: true
       position:
         top: 6
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 10s
+
+    opencode:
+      type: cmdrunner
+      title: OpenCode Web :4096
+      cmd: /home/binbenban/.local/bin/opencode-status
+      args: []
+      enabled: true
+      position:
+        top: 7
         left: 0
         height: 1
         width: 2
