@@ -36,6 +36,8 @@ if OS.mac?
   cask "visual-studio-code"
   cask "tailscale-app"
   cask "vivaldi"
+  brew "neovim"
+  brew "fd"
 end
 
 # ──────────────────────────────────────────────
