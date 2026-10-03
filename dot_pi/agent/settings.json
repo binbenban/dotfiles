@@ -11,7 +11,8 @@
   "packages": [
     "npm:pi-docparser",
     "../../.npm-global/lib/node_modules/@jmfederico/pi-web/dist/pi-packages/relays",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    "npm:pi-session-search"
   ],
   "defaultThinkingLevel": "medium"
 }
