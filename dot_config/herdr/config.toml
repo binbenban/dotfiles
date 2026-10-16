@@ -1,0 +1,7 @@
+onboarding = false
+[theme]
+name = "rose-pine"
+auto_switch = false
+
+[terminal]
+new_cmd = "current"

@@ -27,3 +27,5 @@ alias l='lsd -l'
 alias tree="lsd --tree --group-dirs first --depth=2 2>/dev/null"
 
 alias wtf="wtfutil"
+
+alias h='herdr session attach "$(basename "$PWD")"'
