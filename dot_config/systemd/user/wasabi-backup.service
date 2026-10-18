@@ -1,0 +1,15 @@
+[Unit]
+Description=Full backup reconciliation to Wasabi
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/binbenban/projects/wasabi-backup
+Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
+Environment=WASABI_BACKUP_CONFIG=/home/binbenban/projects/wasabi-backup/config.env
+ExecStart=/home/binbenban/projects/wasabi-backup/backup-wasabi.sh
+TimeoutStartSec=infinity
+UMask=0077
+StandardOutput=journal
+StandardError=journal

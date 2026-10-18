@@ -1,0 +1,10 @@
+[Unit]
+Description=Homebrew generated unit for transmission-cli
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=simple
+ExecStart="/home/linuxbrew/.linuxbrew/opt/transmission-cli/bin/transmission-daemon" "--foreground" "--config-dir" "/home/linuxbrew/.linuxbrew/var/transmission/" "--log-info" "--logfile" "/home/linuxbrew/.linuxbrew/var/transmission/transmission-daemon.log"
+Restart=on-failure

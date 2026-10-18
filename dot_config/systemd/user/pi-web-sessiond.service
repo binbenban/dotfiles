@@ -1,0 +1,10 @@
+[Unit]
+Description=PI WEB session daemon
+[Service]
+Type=simple
+ExecStart=/usr/bin/env "/usr/bin/zsh" -lc "exec node '/home/binbenban/.npm-global/lib/node_modules/@jmfederico/pi-web/dist/server/sessiond.js'"
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily full backup reconciliation to Wasabi
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+Unit=wasabi-backup.service
+
+[Install]
+WantedBy=timers.target
