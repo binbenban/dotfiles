@@ -121,15 +121,3 @@ wtf:
         width: 2
       refreshInterval: 10s
 
-    piweb:
-      type: cmdrunner
-      title: Pi Web :8504
-      cmd: /home/binbenban/.local/bin/pi-web-status
-      args: []
-      enabled: true
-      position:
-        top: 7
-        left: 0
-        height: 1
-        width: 2
-      refreshInterval: 10s
