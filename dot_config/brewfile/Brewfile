@@ -15,7 +15,6 @@ brew "starship"
 brew "uv"
 brew "yazi"
 brew "zoxide"
-brew "herdr"
 brew "git"
 
 # ──────────────────────────────────────────────
