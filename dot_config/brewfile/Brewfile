@@ -12,13 +12,11 @@ brew "jq"
 brew "lsd"
 brew "ruff"
 brew "starship"
-brew "tree-sitter-cli"
 brew "uv"
 brew "yazi"
 brew "zoxide"
 brew "herdr"
 brew "git"
-brew "ripgrep"
 
 # ──────────────────────────────────────────────
 # macOS only
@@ -36,7 +34,6 @@ if OS.mac?
   cask "visual-studio-code"
   cask "tailscale-app"
   cask "vivaldi"
-  brew "neovim"
   brew "fd"
 end
 
@@ -45,6 +42,5 @@ end
 # ──────────────────────────────────────────────
 if OS.linux?
   brew "pi-coding-agent"
-  brew "transmission-cli"
   brew "wtfutil"
 end

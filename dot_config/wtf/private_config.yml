@@ -30,19 +30,6 @@ wtf:
         width: 2
       refreshInterval: 60s
 
-    transmission:
-      type: cmdrunner
-      title: Transmission :9091
-      cmd: /home/linuxbrew/.linuxbrew/bin/transmission-remote
-      args: ["--list"]
-      enabled: true
-      position:
-        top: 2
-        left: 0
-        height: 1
-        width: 1
-      refreshInterval: 15s
-
     tailscale:
       type: cmdrunner
       title: Tailscale
@@ -51,9 +38,9 @@ wtf:
       enabled: true
       position:
         top: 2
-        left: 1
+        left: 0
         height: 1
-        width: 1
+        width: 2
       refreshInterval: 15s
 
     immich:
