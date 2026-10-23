@@ -4,3 +4,6 @@ Communication style:
 - Be very concise unless I ask for detail.
 - Use lists for steps or multiple points. Use tables only for useful comparisons.
 - Add a “Details” section only when the answer needs explanation.
+
+Tool use:
+- load "./TOOL_USE.md" if exists
