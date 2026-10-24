@@ -40,6 +40,14 @@ end
 # Linux only
 # ──────────────────────────────────────────────
 if OS.linux?
-  brew "pi-coding-agent"
+end
+
+# ──────────────────────────────────────────────
+# Server only (nuc)
+# ──────────────────────────────────────────────
+if OS.linux? && `hostname`.strip == "nuc"
   brew "wtfutil"
+  brew "pi-coding-agent"
+  brew "agent-browser"
+  brew "bitwarden-cli"
 end
